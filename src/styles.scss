@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+$primaryColor: rgb(239,79,73);
+$primaryDark: rgb(69, 76, 80);
+@font-face {
+    src: url('assets/Fonts/SF-Compact-Display-Regular.otf');
+    font-family: sfcompact;
+    font-weight: normal;
+}
+
+@font-face {
+    src: url('assets/Fonts/SF-Compact-Display-Bold.otf');
+    font-family: sfcompact;
+    font-weight: bold;
+}
+
+body {
+    font-family: sfcompact, Arial, sans-serif;
+}
+
+.text-primary {
+    color: $primaryColor !important;
+}
+.btn.btn-outline-primary {
+    border-color: $primaryColor;
+    border-width: 2px;
+    border-radius: 0;
+    // color: $primaryColor !important;
+    padding: .75rem 1.5rem;
+    font-weight: 500;
+}
+a:not([href]):not([tabindex]).btn.btn-outline-primary, .btn.btn-outline-primary  {
+    color: $primaryColor;
+}
+.btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle,.btn-outline-primary:hover {
+    background-color: $primaryColor;
+    border-color: $primaryColor;
+    color: #fff !important;
+    cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {font-weight: bold;}
+
+@media (min-width: 320px) {
+    html {font-size: 12px;}
+}
+@media (min-width: 768px) {
+    html {font-size: 14px;}
+    .hp-signup-button {
+        margin-top: 1rem;
+    }
+}
+@media (min-width: 1200px) {
+    html {font-size: 16px;}
+    .hp-signup-button {
+        margin-top: 1rem;
+    }
+}

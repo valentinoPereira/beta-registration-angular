@@ -1,0 +1,60 @@
+<div class="row justify-content-center mt-5">
+  <div class="col-md-6 col-xs-12">
+    <p>
+        <app-angular-logo [width]="50"></app-angular-logo>
+    </p>
+    <p class="text-center">
+      Please confirm or edit your contact information, so that we notify you
+      when you are approved for our BETA.
+    </p>
+    <hr />
+
+    <form [formGroup]="requestForm" (ngSubmit)="signUp(requestForm.value)">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="email"
+          class="form-control"
+          id="name"
+          formControlName="name"
+          placeholder="Enter Name"
+          readonly
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          formControlName="email"
+          id="email"
+          placeholder="Enter email"
+          readonly
+        />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input
+          type="tel"
+          class="form-control"
+          formControlName="phone"
+          id="phone"
+          placeholder="Type a phone number"
+        />
+      </div>
+      <hr />
+      <div class="form-group text-center">
+        <button
+          type="submit"
+          class="btn btn-outline-primary"
+          [disabled]="requestForm.invalid"
+        >
+          SIGN UP
+        </button>
+
+        <br><br>
+  <a routerLink="/">Go Home</a>
+      </div>
+    </form>
+  </div>
+</div>
