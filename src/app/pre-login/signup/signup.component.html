@@ -1,7 +1,7 @@
 <div class="row justify-content-center mt-5">
   <div class="col-md-6 col-xs-12">
     <p>
-        <app-angular-logo [width]="50"></app-angular-logo>
+      <app-angular-logo [width]="50"></app-angular-logo>
     </p>
     <p class="text-center">
       Please confirm or edit your contact information, so that we notify you
@@ -33,7 +33,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="phone">Phone Number</label>
+        <label for="phone">Phone Number <span class="text-danger">*</span></label>
         <input
           type="tel"
           class="form-control"
@@ -41,6 +41,25 @@
           id="phone"
           placeholder="Type a phone number"
         />
+        <small
+          class="form-text text-danger"
+          *ngIf="
+            requestForm.get('phone').touched &&
+            requestForm.get('phone').hasError('required')
+          "
+        >
+          You need to provide a contact number
+        </small>
+        <small
+          class="form-text text-danger"
+          *ngIf="
+            requestForm.get('phone').touched &&
+            requestForm.get('phone').hasError('invalidPattern') &&
+            !requestForm.get('phone').hasError('required')
+          "
+        >
+          Please enter a valid contact number. eg: 9820098200
+        </small>
       </div>
       <hr />
       <div class="form-group text-center">
@@ -52,8 +71,8 @@
           SIGN UP
         </button>
 
-        <br><br>
-  <a routerLink="/">Go Home</a>
+        <br /><br />
+        <a routerLink="/">Go Home</a>
       </div>
     </form>
   </div>
