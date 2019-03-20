@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ApiProviderService } from 'src/app/api-provider.service';
 import { Router } from '@angular/router';
 import { mobileNoValidator } from 'src/app/shared/mobile-number-validator';
+import { BetaRequest } from 'src/app/interfaces/beta-request';
 
 @Component({
   selector: 'app-signup',
@@ -23,8 +24,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {}
 
-  signUp(formData) {
-    console.log(formData);
+  signUp(formData: BetaRequest) {
     this.service.signUp(formData).subscribe(
       res => {
         console.log(res);

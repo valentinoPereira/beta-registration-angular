@@ -18,7 +18,7 @@ export class AuthInterceptor implements HttpInterceptor {
     // send cloned request with header to the next handler.
     return next.handle(req).pipe(
       tap(event => {
-        console.log('Event: ', event);
+        // console.log('Event: ', event);
         // There may be other events besides the response.
         if (event instanceof HttpResponse) {
           this.service.loading = false;
