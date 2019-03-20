@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
 
-## To use this project
+## To run this project
 
 1) Clone the repository.
 2) Navigate to the project folder and run "npm install".
